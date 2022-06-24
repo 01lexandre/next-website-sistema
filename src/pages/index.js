@@ -81,6 +81,11 @@ function IconWhats() {
 export default function Home() {
   const bgAction = useColorModeValue(theme.colors.primary['400'], theme.colors.primary['100'])
   // TODO: https://github.com/garmeeh/next-seo
+
+  function openChat () {
+    window.$crisp.push(['do', 'chat:open'])
+  }
+
   return (
     <>
       <NextSeo
@@ -277,6 +282,7 @@ export default function Home() {
                       w={'100%'}
                       colorScheme='teal'
                       size={'lg'}
+                      onClick={openChat}
                     >
                      Chamar um consultor
                     </Button>
