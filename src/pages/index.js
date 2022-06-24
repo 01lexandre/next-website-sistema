@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import theme from '../styles/theme'
 import ImageHeader from '../assets/no-oldman.png'
+import bgBanner from '../assets/banner-bg-1-1-dd9fe59bd7fb8d8bee8da6d74bf87663.png'
 import SlideHero from "../Components/SlideHero";
 import {Field, Form, Formik} from "formik";
 import {BrandJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
@@ -117,7 +118,7 @@ export default function Home() {
         logo={process.env.APP_URL + '/logo-princ.png'}
       />
       <main>
-        <Box as={'header'} className={styles.header}>
+        <Box as={'header'} className={styles.header} backgroundImage={bgBanner}>
           <Box as={'section'}>
             <Container maxW='container.xl'>
               <Grid templateColumns='repeat(12, 1fr)' gap={6}>
