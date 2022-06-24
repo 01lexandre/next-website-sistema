@@ -5,6 +5,7 @@ import Document, {
 import {ServerStyleSheet} from 'styled-components'
 import {ColorModeScript} from '@chakra-ui/react'
 import theme from '../styles/theme'
+import {useRouter} from "next/router";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -25,7 +26,6 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
-
   render() {
     return (<Html lang={'pt_BR'}>
         <Head>

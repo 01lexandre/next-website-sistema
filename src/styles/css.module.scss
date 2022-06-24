@@ -2,7 +2,38 @@ $color-primary: #6566ff;
 $color-dark_primary: #3524cf;
 
 .header {
+  //background-color: linear-gradient(-180deg,#E0F5FA 0%,#FFFDE6 100%);
+  background-color: #f4f3fa;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background-image: url("../assets/banner-bg-1-1-dd9fe59bd7fb8d8bee8da6d74bf87663.png");
 
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  //padding-top: 100px;
+  //padding-bottom: 0px;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+.centerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.imageH:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 2px solid #FFDC6B;
+  border-radius: 5px;
+  top: 30px;
+  left: 30px;
+  position: absolute;
+  z-index: 2;
+  display: none;
 }
 .gradient_light {
   background: rgb(246,245,250);

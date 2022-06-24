@@ -2,11 +2,11 @@ export default {
   openGraph: {
     type: 'website',
     locale: process.env.APP_LANG,
-    url: 'https://www.sistemaautopecas.com.br/',
+    url: process.env.APP_URL,
     site_name: process.env.APP_NAME,
-    title: process.env.APP_NAME + ' - ' + process.env.APP_SLOGAN,
+    title: process.env.APP_SLOGAN + ' - ' + process.env.APP_NAME,
   },
-  defaultTitle: process.env.APP_NAME + ' - ' + process.env.APP_SLOGAN,
+  defaultTitle: process.env.APP_SLOGAN + ' - ' + process.env.APP_NAME,
   twitter: {
     handle: '@naweby',
     site: '@naweby',

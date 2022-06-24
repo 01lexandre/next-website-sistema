@@ -7,6 +7,7 @@ import {ChakraProvider, extendTheme} from '@chakra-ui/react'
 import {AnimatePresence} from "framer-motion";
 import Script from 'next/script'
 import NavBar from "../Components/NavBar";
+import HeaderNav from "../Components/Header/HeaderNav";
 import Footer from "../Components/Footer";
 const theme = extendTheme(themeShema)
 
@@ -44,33 +45,6 @@ function MyApp({ Component, pageProps }) {
         <ChakraProvider theme={theme}>
           <DefaultSeo {...SEO} />
           <Script
-            id="google-analytics"
-            src="https://www.googletagmanager.com/gtag/js?id=UA-229188980-1"
-            onLoad={() => {
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-229188980-1');
-            }}
-          />
-          {/*<Script*/}
-          {/*  id="crisp-widget"*/}
-          {/*  strategy="afterInteractive"*/}
-          {/*  dangerouslySetInnerHTML={{*/}
-          {/*    __html: `*/}
-          {/*      window.$crisp=[];*/}
-          {/*      window.CRISP_WEBSITE_ID="b7324b94-13ef-446f-8896-4793887ea35f";*/}
-          {/*      (function(){*/}
-          {/*        const d = document;*/}
-          {/*        const s = d.createElement("script");*/}
-          {/*        s.src = "https://client.crisp.chat/l.js";*/}
-          {/*        s.async = 1;*/}
-          {/*        d.getElementsByTagName("head")[0].appendChild(s);*/}
-          {/*      })();`,*/}
-          {/*  }}*/}
-          {/*/>*/}
-          {/*intercom*/}
-          <Script
             dangerouslySetInnerHTML={{
               __html: `
               window.intercomSettings = {
@@ -87,32 +61,11 @@ function MyApp({ Component, pageProps }) {
               `,
             }}
           />
-          <Script
-            id="hotjar-widget"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-               (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2983926,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
-            }}
-          />
-          {(router.pathname === '/tudo-pronto' ? (
-            <>
-              <Component {...pageProps}/>
-            </>
-          ) : (
-            <>
-              <NavBar />
-              <Component {...pageProps}/>
-              <Footer />
-            </>
-          ))}
+          <>
+            <HeaderNav />
+            <Component {...pageProps}/>
+            <Footer />
+          </>
           <GlobalStyle />
         </ChakraProvider>
       </AnimatePresence>

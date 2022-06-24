@@ -5,8 +5,9 @@ import NextLink from "next/link";
 import styles from "../styles/css.module.scss";
 
 export default function NavBar() {
+  // bg={useColorModeValue('#F6F5FA', 'gray.900')}
   return (
-    <Box as={'nav'} bg={useColorModeValue('#F6F5FA', 'gray.900')}>
+    <Box as={'nav'} position={'absolute'} width={'100%'}>
       <Container maxW='container.xl'>
         <Grid templateColumns='repeat(12, 1fr)' gap={6}>
           <GridItem colSpan={[12, 12, 4]}>
